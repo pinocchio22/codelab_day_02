@@ -51,8 +51,22 @@ class MainActivity : ComponentActivity() {
 //                        }
 //                    }
 //                }
-                LayoutsCodelab()
+//                LayoutsCodelab()
+                MyColumnTest()
             }
+        }
+    }
+}
+
+@SuppressLint("UnusedMaterialScaffoldPaddingParameter")
+@Composable
+fun MyColumnTest() {
+    Scaffold() {
+        MyOwnColumn(modifier = Modifier.background(Color.Yellow)) {
+            Text(text = "aaaaaaaaaaaaaaa")
+            Text(text = "aaaaa")
+            Text(text = "aaaaaaaaaaa")
+            Text(text = "aaaaaaaa")
         }
     }
 }
