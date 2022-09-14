@@ -53,11 +53,33 @@ class MainActivity : ComponentActivity() {
 //                }
 //                LayoutsCodelab()
 //                MyColumnTest()
-                MyRowTest()
+//                MyRowTest()
+                StaggeredGridExample()
             }
         }
     }
 }
+
+val topics = listOf(
+    "Arts & Crafts", "Beauty", "Books", "Business", "Comics", "Culinary",
+    "Design", "Fashion", "Film", "History", "Maths", "Music", "People", "Philosophy",
+    "Religion", "Social sciences", "Technology", "TV", "Writing"
+)
+
+@Composable
+fun StaggeredGridExample(modifier: Modifier = Modifier) {
+    Row(modifier = modifier
+        .background(color = Color.LightGray)
+        .horizontalScroll(rememberScrollState()),
+        content = {
+            StaggeredGrid {
+                for (topic in topics) {
+                    Chip(modifier = Modifier.padding(8.dp), text = topic)
+                }
+            }
+        })
+}
+
 
 @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
 @Composable
